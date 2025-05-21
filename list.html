@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>List Your Equipment | PLAY G°</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #0d0d0d;
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #1a1a1a;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00f2ff60;
+    }
+
+    h2 {
+      text-align: center;
+      color: #00f2ff;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #ccc;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: #00f2ff;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>List Your Equipment</h2>
+    <form>
+      <label>Equipment Name:</label>
+      <input type="text" placeholder="e.g. Leather Cricket Ball">
+
+      <label>Brand (optional):</label>
+      <input type="text" placeholder="e.g. SG, Cosco">
+
+      <label>Upload Image:</label>
+      <input type="file" accept="image/*">
+
+      <label>Owner Name:</label>
+      <input type="text" placeholder="e.g. Rachit">
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
