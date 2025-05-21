@@ -4,16 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PLAY G° - Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+
   <style>
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
       background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
       color: #fff;
-      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -23,8 +29,6 @@
       padding: 20px;
       background-color: #111;
       border-bottom: 2px solid #00ffcc;
-      z-index: 2;
-      position: relative;
     }
 
     header img {
@@ -46,16 +50,19 @@
     .hero {
       text-align: center;
       padding: 80px 20px;
+      background: radial-gradient(circle, #1a1a1a, #000);
     }
 
     .hero h1 {
       font-size: 3rem;
       color: #00ffcc;
+      animation: fadeInDown 1.5s ease-out;
     }
 
     .hero p {
       font-size: 1.2rem;
       margin-top: 20px;
+      animation: fadeInUp 1.5s ease-out;
     }
 
     .hero button {
@@ -67,11 +74,12 @@
       border: none;
       cursor: pointer;
       border-radius: 5px;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.3s;
     }
 
     .hero button:hover {
       background-color: #00ddaa;
+      transform: scale(1.1);
     }
 
     .team, .about, .gallery {
@@ -89,12 +97,25 @@
       margin: 10px;
       color: #fff;
       text-decoration: none;
+      font-size: 1.1rem;
+      transition: transform 0.3s;
+    }
+
+    .team-members a:hover {
+      color: #00ffcc;
+      transform: scale(1.1) rotate(-2deg);
     }
 
     .gallery img {
       width: 300px;
       margin: 10px;
       border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,255,204,0.2);
+      transition: transform 0.4s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
     }
 
     footer {
@@ -104,71 +125,22 @@
       text-align: center;
     }
 
-    /* 🎯 Floating 3D Objects Styles */
-    .floating-objects {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 0;
+    /* Keyframe animations */
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
-    .floating-objects img {
-      position: absolute;
-      width: 60px;
-      opacity: 0.6;
-      animation: float 10s infinite linear;
-    }
-
-    .basketball {
-      top: 20%;
-      left: 10%;
-      animation-delay: 0s;
-    }
-
-    .cricketball {
-      top: 60%;
-      left: 80%;
-      animation-delay: 2s;
-    }
-
-    .bat {
-      top: 40%;
-      left: 50%;
-      animation-delay: 4s;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0.6;
-      }
-      50% {
-        transform: translateY(-30px) rotate(180deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(0) rotate(360deg);
-        opacity: 0.6;
-      }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  
-  <!-- 🎈 Floating 3D Sports Objects -->
-  <div class="floating-objects">
-    <img src="basketball.png" class="float basketball" alt="Basketball">
-    <img src="cricketball.png" class="float cricketball" alt="Cricket Ball">
-    <img src="bat.png" class="float bat" alt="Bat">
-  </div>
 
-  <!-- 💥 Main Website Content -->
   <header>
-    <img src="My ChatGPT image.png" alt="PLAY G° Logo">
+    <img src="images/My ChatGPT image.png" alt="PLAY G° Logo">
     <nav>
       <a href="#about">About</a>
       <a href="#team">Team</a>
@@ -180,17 +152,17 @@
   </header>
 
   <div class="hero">
-    <h1>Rent. Play. Repeat. ⚽️🏀🏈</h1>
+    <h1>Rent. Play. Repeat. ⚽🏀🏈</h1>
     <p>Empowering youth through accessible sports gear. For the players, by the players.</p>
     <button onclick="window.location.href='https://www.instagram.com/playgofficial/'">Join the Movement</button>
   </div>
 
-  <section class="about" id="about">
+  <section class="about" id="about" data-aos="fade-up">
     <h2>About PLAY G°</h2>
     <p>PLAY G° is a youth-led initiative that places sports gear in parks and societies so kids and teens can rent and enjoy them. It's about building access, fun, and empowerment through play!</p>
   </section>
 
-  <section class="team" id="team">
+  <section class="team" id="team" data-aos="zoom-in-up">
     <h2>The PLAY G° Team</h2>
     <div class="team-members">
       <a href="https://www.instagram.com/ohaid3333/" target="_blank">Ohaid Khan</a>
@@ -202,19 +174,30 @@
   </section>
 
   <section class="gallery" id="gallery">
-    <h2>Our Journey in Frames</h2>
-    <img src="1.png" alt="Gallery 1"/>
-    <img src="2.png" alt="Gallery 2"/>
+    <h2 data-aos="fade-left">Our Journey in Frames</h2>
+    <img src="images/1.png" alt="Promo 1" data-aos="flip-left" data-aos-duration="1000">
+    <img src="images/2.png" alt="Promo 2" data-aos="flip-right" data-aos-duration="1000">
   </section>
 
   <footer>
     <p>&copy; 2025 PLAY G° | Powered by passion, driven by play.</p>
   </footer>
 
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
-
+     
+    
+    
+    
    
+ 
+    
+  
    
      
      
