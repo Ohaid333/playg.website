@@ -1,59 +1,20 @@
-body { 
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #0f0f0f;
-  color: #ffffff;
-}
-
-nav {
-  background-color: #121212;
-  padding: 1rem 2rem;
+.promo-images {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0, 255, 255, 0.2);
+  margin: 40px auto;
+  gap: 20px;
 }
 
-/* === Floating Animated 3D Objects in Background === */
-.floating-objects {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
+.promo-img {
+  max-width: 90%;
+  height: auto;
+  border: 3px solid #0ff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
 
-.floating-objects img {
-  position: absolute;
-  width: 80px;
-  opacity: 0.15;
-  animation: floatUpDown 6s ease-in-out infinite;
-  z-index: 0;
-}
+ 
 
-.basketball {
-  top: 10%;
-  left: 20%;
-  animation-delay: 0s;
-}
 
-.cricketball {
-  top: 50%;
-  left: 70%;
-  animation-delay: 2s;
-}
 
-.bat {
-  top: 80%;
-  left: 40%;
-  animation-delay: 4s;
-}
-
-@keyframes floatUpDown {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(10deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
-}
